@@ -1,39 +1,10 @@
 import Image from "next/image";
+import { agentImagesList } from "../../config/agent.config";
 import Flag from "../Flag";
 import P from "../P";
 import Subtitle from "../Subtitle";
 import Wrapper from "../Wrapper";
-
-const agentImagesList = [
-  {
-    key: 1,
-    src: "/media/marca1.png",
-    alt: "amrica's top 100",
-    width: 480,
-    height: 480,
-  },
-  {
-    key: 2,
-    src: "/media/marca-2.jpg",
-    alt: "the thousand",
-    width: 480,
-    height: 480,
-  },
-  {
-    key: 3,
-    src: "/media/marca3.png",
-    alt: "america's best",
-    width: 480,
-    height: 480,
-  },
-  {
-    key: 4,
-    src: "/media/marca4.jpg",
-    alt: "winner 202 best of slc",
-    width: 480,
-    height: 600,
-  },
-];
+import AgentList from "./AgentList";
 
 const Agent = () => {
   return (
@@ -82,22 +53,7 @@ const Agent = () => {
               Valley.
             </P>
 
-            <div className="w-full h-max flex flex-wrap justify-center items-center gap-10 py-10">
-              {agentImagesList.map((image) => (
-                <div
-                  className="relative max-w-[130px]  w-[33.33%]"
-                  key={image.key}
-                >
-                  <Image
-                    src={image.src}
-                    layout="responsive"
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                  />
-                </div>
-              ))}
-            </div>
+            <AgentList />
             <P>
               Selling your home can be overwhelming so I take a strategic
               approach. My company is a well-oiled machine meticulously planned
